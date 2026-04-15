@@ -4,50 +4,45 @@ interface Props {
 
 const STARTERS = [
   'What kind of work do you do?',
-  'Tell me about your time at Groww.',
+  'Tell me about Groww.',
   'What was it like being a founding designer?',
-  'What are you looking for in your next role?',
+  'What tools do you use?',
   'How do you handle design pushback?',
-  'What tools do you work with?',
 ]
 
 export default function Hero({ onQuestion }: Props) {
   return (
     <div className="flex flex-col items-center justify-center h-full px-6 py-16 text-center">
-      {/* Greeting */}
-      <div className="space-y-3 mb-12">
-        <p className="text-xs font-sans tracking-[0.2em] uppercase text-ink/30">
-          Portfolio
-        </p>
-        <h1 className="font-serif text-4xl md:text-5xl text-ink leading-tight">
-          Hi, I'm Shivang.
-        </h1>
-        <p className="font-serif italic text-xl text-ink/50 leading-relaxed max-w-sm mx-auto">
-          Product designer focused on financial products and the details that make them feel right.
-        </p>
+      {/* Glow orb */}
+      <div className="relative mb-10">
+        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-accent via-purple-500 to-fuchsia-500
+                        blur-sm opacity-60" />
+        <div className="absolute inset-0 w-24 h-24 rounded-full bg-gradient-to-br from-accent via-purple-500 to-fuchsia-500
+                        opacity-40 blur-2xl scale-150" />
       </div>
 
-      {/* Divider */}
-      <div className="w-px h-10 bg-ink/15 mb-10" />
+      {/* Heading */}
+      <h1 className="text-3xl md:text-4xl font-semibold text-text-primary mb-3 leading-tight">
+        Ready to Know More?
+      </h1>
+      <p className="text-sm text-text-muted mb-12 max-w-sm">
+        Ask me about my design work, experience, and process.
+      </p>
 
-      {/* Prompt chips */}
-      <div className="space-y-3 w-full max-w-md">
-        <p className="text-xs font-sans text-ink/30 tracking-wide">
-          Ask me something
-        </p>
-        <div className="flex flex-wrap gap-2 justify-center">
-          {STARTERS.map(q => (
-            <button
-              key={q}
-              onClick={() => onQuestion(q)}
-              className="px-4 py-2 text-sm font-sans border border-ink/15 rounded-full
-                         text-ink/50 hover:text-ink hover:border-ink/40
-                         transition-all duration-150 text-left"
-            >
-              {q}
-            </button>
-          ))}
-        </div>
+      {/* Starter chips */}
+      <div className="flex flex-wrap gap-2 justify-center max-w-lg">
+        {STARTERS.map(q => (
+          <button
+            key={q}
+            onClick={() => onQuestion(q)}
+            className="px-4 py-2 text-sm border border-dark-border rounded-full
+                       bg-dark-card text-text-secondary
+                       hover:border-accent/40 hover:text-accent-light hover:bg-dark-elevated
+                       transition-all duration-200"
+          >
+            {q}
+          </button>
+        ))}
       </div>
     </div>
   )

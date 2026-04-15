@@ -34,8 +34,17 @@ export default function ChatInput({ onSend, disabled }: Props) {
   }
 
   return (
-    <div className="flex items-end gap-3 border border-ink/15 rounded-2xl
-                    px-4 py-3 bg-white focus-within:border-ink/40 transition-colors">
+    <div className="flex items-end gap-3 border border-dark-border rounded-2xl
+                    px-4 py-3 bg-dark-card focus-within:border-accent/30
+                    transition-colors">
+      {/* Sparkle icon */}
+      <div className="flex-shrink-0 text-accent/50 mb-0.5">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <path d="M8 1l1.5 4.5L14 7l-4.5 1.5L8 13l-1.5-4.5L2 7l4.5-1.5L8 1z"
+                fill="currentColor"/>
+        </svg>
+      </div>
+
       <textarea
         ref={textareaRef}
         rows={1}
@@ -44,18 +53,19 @@ export default function ChatInput({ onSend, disabled }: Props) {
         onKeyDown={handleKeyDown}
         onInput={handleInput}
         disabled={disabled}
-        placeholder="Ask me anything..."
-        className="flex-1 resize-none bg-transparent text-sm font-sans text-ink
-                   placeholder:text-ink/30 outline-none leading-relaxed
+        placeholder="Ask Anything..."
+        className="flex-1 resize-none bg-transparent text-sm text-text-primary
+                   placeholder:text-text-muted outline-none leading-relaxed
                    disabled:opacity-40 max-h-40"
       />
+
       <button
         onClick={submit}
         disabled={disabled || !value.trim()}
         aria-label="Send"
-        className="flex-shrink-0 w-8 h-8 rounded-full bg-ink text-cream
-                   flex items-center justify-center transition-opacity
-                   disabled:opacity-20 hover:opacity-80"
+        className="flex-shrink-0 w-8 h-8 rounded-full bg-accent text-white
+                   flex items-center justify-center transition-all
+                   disabled:opacity-20 hover:bg-accent-light active:scale-95"
       >
         <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
           <path d="M7 12V2M2 7l5-5 5 5" stroke="currentColor" strokeWidth="1.5"
