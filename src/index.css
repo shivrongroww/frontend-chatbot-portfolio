@@ -9,14 +9,14 @@
   }
 
   body {
-    @apply bg-cream text-ink font-sans;
+    @apply bg-dark-bg text-text-primary font-sans;
   }
 
   ::selection {
-    @apply bg-ink text-cream;
+    background: rgba(139, 92, 246, 0.4);
+    color: #fff;
   }
 
-  /* Subtle scrollbar */
   ::-webkit-scrollbar {
     width: 4px;
   }
@@ -24,6 +24,6 @@
     @apply bg-transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-ink/20 rounded-full;
+    @apply bg-white/10 rounded-full;
   }
 }
