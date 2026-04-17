@@ -13,8 +13,8 @@
   }
 
   ::selection {
-    background: rgba(139, 92, 246, 0.4);
-    color: #fff;
+    background: rgba(249, 115, 22, 0.25);
+    color: #1a1a1f;
   }
 
   ::-webkit-scrollbar {
@@ -24,6 +24,6 @@
     @apply bg-transparent;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-white/10 rounded-full;
+    @apply bg-black/10 rounded-full;
   }
 }
